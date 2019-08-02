@@ -1,4 +1,5 @@
 const KEY = require("../config/key");
+const isAuth = require("../middleware/isAuth");
 const stripe = require("stripe")(KEY.STRIPE_SECRET_KEY);
 
 module.exports = app => {

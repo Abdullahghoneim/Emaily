@@ -23,7 +23,7 @@ app.use(passport.session());
 require("./routes/authRouter")(app);
 require("./routes/billingRouter")(app);
 
-mongoose.connect(keys.mongoURI).then(() => {
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true }).then(() => {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => console.log(`app runing on port ${PORT}`));
 });
